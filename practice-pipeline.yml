@@ -1,0 +1,27 @@
+trigger:
+- none
+
+pool:
+  Practice-AgentPool
+
+variables:
+- name: NameT
+  value: MarwanSaleh
+
+steps:
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "$(NameT) is your name"
+    failOnStderr: true
+  displayName: "Print my name"
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "how are you $(NameT)?"
+    failOnStderr: true
+  displayName: my name is $(NameT)
